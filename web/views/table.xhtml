@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <section>
+        <p:dataTable id="table"  styleClass="point-table" var="point" value="#{pointListBean.points}">
+            <p:column  sortBy="#{point.x}" headerText="X">
+                <h:outputText value="#{point.x}"/>
+            </p:column>
+
+            <p:column sortBy="#{point.y}" headerText="Y">
+                <h:outputText value="#{point.y}"/>
+            </p:column>
+
+            <p:column sortBy="#{point.r}" headerText="R">
+                <h:outputText value="#{point.r}"/>
+            </p:column>
+
+
+            <p:column sortBy="#{point.result}" headerText="Result">
+                <h:outputText value="#{point.result}"/>
+            </p:column>
+        </p:dataTable>
+    </section>
+</ui:composition>

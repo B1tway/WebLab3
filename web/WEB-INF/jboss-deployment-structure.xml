@@ -1,0 +1,7 @@
+<jboss-deployment-structure>
+    <deployment>
+        <exclude-subsystems>
+            <subsystem name="jsf" />
+        </exclude-subsystems>
+    </deployment>
+</jboss-deployment-structure>

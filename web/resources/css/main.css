@@ -1,0 +1,106 @@
+.header {
+    width: 100%;
+    color: #8b03ff;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: "Monospace";
+    background-color: #ffe823;
+}
+.bg-purple {
+    background: #af00ff;
+    width: 100%;
+    height: 100vh;
+}
+.redirect-button {
+
+    background: #ffe823;
+    color: #af00ff;
+    font-size: 2em;
+    width: 250px;
+    height: 100px;
+}
+.centered-text {
+    text-align: center;
+}
+.redirect-button-block {
+    display: block;
+    text-align: center;
+    height: 100px;
+
+}
+#canvas-clock {
+    display: block;
+    background-color: #ad1fff;
+}
+.date-block {
+    margin-top: 20px;
+    height: 40px;
+}
+#date {
+    font-size: 2.4em;
+    color: #ffe823;
+    font-family: Lucida Console;
+}
+
+#canvas {
+    display: block;
+    width: 650px;
+    margin: 20px auto;
+}
+.inputs {
+    width: 100%;
+    position: relative;
+}
+.input-block {
+    text-align: center;
+    float: left;
+    width: 33.33%;
+}
+.input-label {
+    margin-right: 1vw;
+    font-size: 1.5em;
+
+}
+.buttons {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+
+}
+.main-button {
+    margin: 10px 10px;
+    width: 150px;
+    height: 30px;
+    color: #af00ff;
+    background: #ffe823;
+
+}
+.point-table th{
+    background: #ffe823;
+    color:#af00ff;
+
+}
+.point-table td {
+    background: #f7ff80;
+    color: #af00ff;
+    text-align: center;
+}
+label {
+    color: #ffe823;
+
+}
+.r-values {
+    margin: 0 auto;
+}
+.input-label {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: "Monospace";
+}
+.input-label-r {
+    font-size: 1.4em;
+    font-weight: bold;
+    font-family: "Monospace";
+    margin: 0 auto;
+
+}

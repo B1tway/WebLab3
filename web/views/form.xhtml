@@ -1,0 +1,75 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+    <h:form id="form">
+        <div class="inputs">
+            <div class="input-block">
+                <h:outputLabel styleClass="input-label">X</h:outputLabel>
+                <h:inputText id="x" name="x" placeholder="(-3;5)" converterMessage="value must be a
+                             number" requiredMessage="?" autocomplete="off" value="#{pointListBean.point.x}">
+                    <f:attribute name="min" value="-3"/>
+                    <f:attribute name="max" value="5"/>
+                    <f:validator validatorId="decimalValidator"/>
+                    <f:converter converterId="javax.faces.Double"/>
+                    <f:ajax event="keyup" render="error-messageX"/>
+                </h:inputText>
+                <br/>
+                <h:message id="error-messageX" styleClass="error-text" for="x"/>
+            </div>
+            <div class="input-block">
+                <h:outputLabel styleClass="input-label">Y</h:outputLabel>
+                <h:inputText id="y" name="y" placeholder="(-5;5)" converterMessage="value must be a
+                             number" requiredMessage="?" autocomplete="off" value="#{pointListBean.point.y}">
+                    <f:attribute name="min" value="-5"/>
+                    <f:attribute name="max" value="5"/>
+                    <f:validator validatorId="decimalValidator"/>
+                    <f:converter converterId="javax.faces.Double"/>
+                    <f:ajax event="keyup" render="error-messageY"/>
+                </h:inputText>
+                <br/>
+                <h:message id="error-messageY" styleClass="error-text" for="y"/>
+            </div>
+            <div class="input-block">
+                <h:outputLabel styleClass="input-label-r    ">R</h:outputLabel>
+                <h:selectOneRadio styleClass="r-values" required="true" id="R" name="R" unselectable="false" onchange="draw_canvas()"
+                                  value="#{pointListBean.point.r}">
+                    <f:selectItem itemValue="1" itemLabel="1"/>
+                    <f:selectItem itemValue="2" itemLabel="2"/>
+                    <f:selectItem itemValue="3" itemLabel="3"/>
+                    <f:selectItem itemValue="4" itemLabel="4"/>
+                    <f:selectItem itemValue="5" itemLabel="5"/>
+                    <f:attribute name="min" value="1"/>
+                    <f:attribute name="max" value="5"/>
+
+                </h:selectOneRadio>
+            </div>
+        </div>
+        <div class="buttons">
+            <p:commandButton value="StartPage" styleClass="main-button" outcome="index"></p:commandButton>
+            <p:commandButton value="Sumbit" styleClass="main-button">
+                <p:ajax process="@form" update="table" listener="#{pointListBean.addPoint}"
+                        oncomplete="print_points()"/>
+            </p:commandButton>
+            <p:commandButton value="Clear" styleClass="main-button">
+                <p:ajax process="@form" update="table" listener="#{pointListBean.deleteAllPoints}"
+                        oncomplete="print_points()"/>
+            </p:commandButton>
+        </div>
+
+    </h:form>
+    <h:form id="hidden-form" style="display:none;">
+        <h:inputHidden id="hidden-x" value="#{pointListBean.point.x}">
+            <f:converter converterId="javax.faces.Double"/>
+        </h:inputHidden>
+        <h:inputHidden id="hidden-y" value="#{pointListBean.point.y}">
+            <f:converter converterId="javax.faces.Double"/>
+        </h:inputHidden>
+        <h:inputHidden id="hidden-r" value="#{pointListBean.point.r}">
+            <f:converter converterId="javax.faces.Double"/>
+        </h:inputHidden>
+        <h:commandButton id="hidden-button">
+            <p:ajax process="@form" update="table" listener="#{pointListBean.addPointWithoutValidation}" oncomplete="print_points()"/>
+        </h:commandButton>
+    </h:form>
+</ui:composition>
