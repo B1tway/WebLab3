@@ -104,3 +104,21 @@ label {
     margin: 0 auto;
 
 }
+.main-link {
+    color: #ffe823;
+    font-size: 1.5em;
+    text-decoration: none;
+
+}
+.start-link-block {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.start-link {
+    color: #ffe823;
+
+    font-size: 1.5em;
+    text-decoration: none;
+
+}

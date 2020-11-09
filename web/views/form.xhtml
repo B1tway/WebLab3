@@ -45,8 +45,8 @@
                 </h:selectOneRadio>
             </div>
         </div>
+
         <div class="buttons">
-            <p:commandButton value="StartPage" styleClass="main-button" outcome="index"></p:commandButton>
             <p:commandButton value="Sumbit" styleClass="main-button">
                 <p:ajax process="@form" update="table" listener="#{pointListBean.addPoint}"
                         oncomplete="print_points()"/>
@@ -56,7 +56,9 @@
                         oncomplete="print_points()"/>
             </p:commandButton>
         </div>
-
+        <div class="start-link-block">
+            <h:link styleClass="start-link" value="Start page" outcome="start" />
+        </div>
     </h:form>
     <h:form id="hidden-form" style="display:none;">
         <h:inputHidden id="hidden-x" value="#{pointListBean.point.x}">

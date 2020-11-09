@@ -7,7 +7,7 @@
     <navigation-rule>
         <from-view-id>/views/main.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>index</from-outcome>
+            <from-outcome>start</from-outcome>
             <to-view-id>/views/index.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
@@ -16,8 +16,9 @@
     <navigation-rule>
         <from-view-id>/views/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>main</from-outcome>
+            <from-outcome>content</from-outcome>
             <to-view-id>/views/main.xhtml</to-view-id>
+            <redirect/>
         </navigation-case>
     </navigation-rule>
 </faces-config>
