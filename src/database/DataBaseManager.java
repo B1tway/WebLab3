@@ -13,8 +13,8 @@ public class DataBaseManager {
     private static final String TABLE_NAME = "POINTS";
 
     static {
-        USER = "s284706";
-        PASS = "zog754";
+        USER = "****";
+        PASS = "****";
 
         System.out.println("Connection to Oracle JDBC");
         try {
